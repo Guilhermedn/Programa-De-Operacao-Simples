@@ -1,6 +1,6 @@
-n = 1
+from math import sqrt
 
-while n != 0:
+while True:
     print('==' * 30)
     print(""" \033[1;33m        DIGITE UM VALOR CORRESPONDENTE AS OPÇÕES \033[m
     \033[1;m
@@ -8,8 +8,10 @@ while n != 0:
 [2] MULTIPLICAR
 [3] DIVIDIR
 [4] SUBTRAIR
-[5] MAIOR
-[6] SAIR DO PROGRAMA""")
+[5] RAIZ QUADRADA
+[6] POTENCIA
+[7] MAIOR
+[8] SAIR DO PROGRAMA""")
     print(' ')
     print('==' * 30)
     print('\033[m ')
@@ -68,6 +70,31 @@ while n != 0:
             break
 
     elif escolha == 5:
+        primeiro_numero = input('Digite Um Numero: √')
+        raiz_quadrada2 = sqrt(float(primeiro_numero))
+        print(f'\033[1;32mA Raiz Quadrada de {primeiro_numero} é: \033[1;31m{raiz_quadrada2:.2f}\033[m')
+        sim_nao = str(input('\033[1;90mDESEJA CONTINUAR? [S/N]: \033[m')).upper()
+        if sim_nao == 'S':
+            print(' ')
+            continue
+        else:
+            break    
+
+    elif escolha == 6:
+        primeiro_numero = input('Digite um Numero: ')
+        segundo_numero = input(f'{primeiro_numero} ^ ')
+        potencia = int(primeiro_numero) ** int(segundo_numero)
+        print(f'\033[1;32mO Numero {primeiro_numero} Elevado a {segundo_numero} \033[m'
+        f'\033[1;32mPotencia é: \033[1;31m{potencia}\033[m')
+        sim_nao = str(input('\033[1;90mDESEJA CONTINUAR? [S/N]: \033[m')).upper()
+        if sim_nao == 'S':
+            print(' ')
+            continue
+        else:
+            break    
+
+
+    elif escolha == 7:
         primeiro_numero = input('Digite Um Numero: ')
         segundo_numero = input('Digite Outro Numero: ')
         if primeiro_numero > segundo_numero:
@@ -91,7 +118,7 @@ while n != 0:
             else:
                 break
 
-    elif escolha == 6:
+    elif escolha == 8:
         sim_nao = str(input('\033[1;90mTem Certeza Que Deseja sair [S/N]: \033[m')).upper()
         if sim_nao == 'N':
             print(' ')
